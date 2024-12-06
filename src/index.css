@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+@layer components {
+  .navbar {
+    @apply flex justify-between items-center py-4 px-6 bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg;
+  }
+
+  .nav-item {
+    @apply text-white hover:text-yellow-300 transition-colors duration-300;
+  }
+
+  .project-card {
+    @apply relative p-6 rounded-xl transform transition-all duration-300 cursor-pointer overflow-hidden shadow-lg hover:shadow-2xl hover:scale-105;
+  }
+  
+  .tech-badge {
+    @apply px-2 py-1 text-xs bg-white bg-opacity-20 rounded-full text-white;
+  }
+
+  .button {
+    @apply bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-400 transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  .glassmorphic {
+    @apply bg-white bg-opacity-10 backdrop-blur-lg shadow-lg rounded-xl;
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a5568;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #718096;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: #4299e1;
+  color: white;
+}
