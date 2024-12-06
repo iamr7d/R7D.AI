@@ -1,20 +1,18 @@
 {
   "version": 2,
-  "name": "rahulrajpv",
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "buildCommand": "bash ./vercel-build.sh",
-        "distDir": "build"
-      }
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
+    { 
+      "handle": "filesystem"
+    },
     {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "/index.html"
     }
   ]
 }
