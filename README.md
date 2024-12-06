@@ -2,6 +2,9 @@
 
 A modern, interactive portfolio website showcasing Rahulraj P V's work and achievements in AI, research, and creative technology.
 
+## Live Demo
+[Visit Portfolio](https://rahulrajpv.netlify.app/)
+
 ## Features
 
 - **Interactive AI Assistant**: Chat with an AI-powered virtual assistant that provides information about Rahulraj's background, projects, and achievements
@@ -26,6 +29,6 @@ A modern, interactive portfolio website showcasing Rahulraj P V's work and achie
 ## Contact
 
 - Email: rahulraj.cs22@duk.ac.in
-- Website: [Portfolio](https://sites.google.com/duk.ac.in/rahulrajpv/bio)
+- Portfolio: [rahulrajpv.netlify.app](https://rahulrajpv.netlify.app/)
 - LinkedIn: [@rahulrajpvr7d](https://www.linkedin.com/in/rahulrajpvr7d/)
 - GitHub: [@iamr7d](https://github.com/iamr7d)

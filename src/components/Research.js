@@ -19,7 +19,8 @@ const Research = () => {
       ],
       technologies: ["Data Analytics", "Trend Analysis"],
       conference: "International Conference on Data Analytics and Insights (ICDAI’23)",
-      collaborators: ["Sanil J.", "Anoop V. S", "Asharaf S"]
+      collaborators: ["Sanil J.", "Anoop V. S", "Asharaf S"],
+      link: "https://link.springer.com/chapter/10.1007/978-981-99-3878-0_16"
     },
     {
       title: "Changes in Atmospheric Air Quality in the Wake of a Lockdown Related to Covid–19",
@@ -34,7 +35,8 @@ const Research = () => {
       ],
       journal: "SSRG International Journal of Agriculture & Environmental Science",
       technologies: ["Environmental Science", "Data Analysis"],
-      collaborators: ["Ebin Antony"]
+      collaborators: ["Ebin Antony"],
+      link: "https://www.researchgate.net/publication/361218538_Changes_in_Atmospheric_Air_Quality_in_the_Wake_of_a_Lockdown_Related_to_Covid_-19_in_the_Capital_City_of_Southern_State_of_India_Kerala_-Thiruvananthapuram"
     },
     {
       title: "Influence of AI in Education System",
@@ -49,7 +51,8 @@ const Research = () => {
       ],
       publication: "Emerging Trends of Psycho-Technological Approaches in Heutagogy",
       technologies: ["AI", "Education Technology"],
-      collaborators: ["Ebin Antony"]
+      collaborators: ["Ebin Antony"],
+      link: "https://www.researchgate.net/publication/361218292_Influence_of_AI_in_education_system"
     }
   ];
 
@@ -139,45 +142,25 @@ const Research = () => {
         </div>
 
         {/* Publications */}
-        <div className="space-y-8">
-          {publications.map((pub, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              onClick={() => setSelectedPublication(pub)}
-              className="group cursor-pointer bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 hover:bg-gray-800/80 transition-all duration-300"
-            >
-              <div className="flex flex-col md:flex-row justify-between">
-                <div>
-                  <div className="flex items-center mb-2">
-                    <span className="px-3 py-1 bg-blue-900/50 text-blue-300 rounded-full text-sm mr-2">
-                      {pub.type}
-                    </span>
-                    <span className="text-gray-400">{pub.year}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-300">
-                    {pub.title}
-                  </h3>
-                  <p className="text-gray-400 mb-4">{pub.authors}</p>
-                  <p className="text-gray-300 mb-4">{pub.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {pub.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+        <div className="space-y-6">
+          <div className="bg-[#1e2536]/10 backdrop-blur-sm rounded-xl p-6">
+            <h3 className="text-xl font-semibold mb-4">Research Papers</h3>
+            <div className="space-y-4">
+              {publications.map((pub, index) => (
+                <div key={index}>
+                  <a 
+                    href={pub.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 transition-colors"
+                  >
+                    {index + 1}. {pub.title}
+                  </a>
+                  <p className="text-sm text-white/60 mt-1">{pub.journal || pub.conference || pub.publication}</p>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Publication Modal */}
