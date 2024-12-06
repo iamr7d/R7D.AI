@@ -11,7 +11,7 @@ const educationData = [
     icon: <FaLaptopCode className="text-blue-400 text-2xl mr-4" />, 
     awards: [
       { title: "Outstanding Student Award", icon: <FaAward className="mr-2" /> },
-      { title: "Fourth Rank", icon: <FaMedal className="mr-2" /> }
+      { title: "Fifth Rank", icon: <FaMedal className="mr-2" /> }
     ],
     skills: ["Machine Learning", "Deep Learning", "Natural Language Processing"]
   },

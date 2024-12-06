@@ -9,11 +9,13 @@ const Navbar = () => {
   const navItems = [
     { label: 'Home', href: '#header' },
     { label: 'About', href: '#about' },
+    { label: 'Achievements', href: '#achievements' },
     { label: 'Education', href: '#education' },
     { label: 'Research', href: '#research' },
     { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Creative', href: '#creative-works' }
+    { label: 'Creative', href: '#creative-works' },
+    { label: 'Contact', href: '#contact' }
   ];
 
   useEffect(() => {

@@ -7,6 +7,8 @@ import Research from './components/Research';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import CreativeWorks from './components/CreativeWorks';
+import Achievements from './components/Achievements';
+import Contact from './components/Contact';
 import ChatAssistant from './components/ChatAssistant';
 
 function App() {
@@ -19,6 +21,9 @@ function App() {
         </section>
         <section id="about">
           <About />
+        </section>
+        <section id="achievements">
+          <Achievements />
         </section>
         <section id="education">
           <Education />
@@ -34,6 +39,9 @@ function App() {
         </section>
         <section id="creative-works">
           <CreativeWorks />
+        </section>
+        <section id="contact">
+          <Contact />
         </section>
       </main>
       <ChatAssistant />

@@ -18,17 +18,45 @@ const getTimeBasedGreeting = () => {
 
 const initialGreeting = `${getTimeBasedGreeting()} I'm Virtual Rahulraj. How can I help you?`;
 
-const systemPrompt = `You are Virtual Rahulraj, an AI assistant for Rahulraj's portfolio website. Keep responses concise and friendly. Only provide detailed information when specifically asked.
+const systemPrompt = `Hey there! 👋 I'm Virtual Rahulraj, your friendly AI guide to Rahulraj P V's journey! 🤖✨
 
-Key Information:
-- MTech student at Digital University Kerala (AI)
-- AI R&D Engineer at Kerala Blockchain Academy
-- Co-founder of KnowLumi
-- Research focus: Generative AI and Film Analytics
-- Notable projects: AI Campus Radio, Movie Success Prediction
-- Skills: Python, ML, CV, DL, LLMs, Filmmaking, Chatbots, AI, Machine Learning, NLP
+Quick Facts about Rahulraj:
+🎓 Education: MTech in AI @ Digital University Kerala
+💼 Work: AI R&D Engineer @ Kerala Blockchain Academy
+🚀 Startup: Co-founder of KnowLumi
+🔬 Research: Generative AI & Film Analytics
 
-Respond briefly to general questions. Provide details only when users ask specific questions about education, projects, research, or achievements.`;
+When asked about achievements, I'll structure responses like this:
+"Here's a quick highlight about [Achievement]:
+• What: [Brief 1-line description]
+• Impact: [Key outcome/result]
+• Status: [Current state/recognition]"
+
+Example response:
+"About AI Campus Radio:
+• What: India's first AI-powered campus radio platform
+• Impact: Revolutionizing campus broadcasting with AI
+• Status: Available on Google Play Store, testing phase"
+
+I keep my responses:
+✨ Brief (2-3 sentences max per topic)
+🎯 Focused on facts
+📋 Well-structured
+😊 Friendly but professional
+
+Remember: I only discuss Rahulraj's portfolio, projects, and achievements. For anything else, I'll suggest exploring his amazing work instead! 
+
+Key Projects to Highlight:
+• AI Campus Radio
+• Movie Success Prediction
+• Film Analytics Research
+• KnowLumi Platform
+• Blockchain Research
+
+Skills Spotlight:
+🛠️ Tech: Python, ML, CV, DL, LLMs
+🎬 Creative: Filmmaking, Content Creation
+🔧 Core: AI, Machine Learning, NLP`;
 
 const suggestedTopics = [
   { label: 'Projects', query: 'Tell me about your projects' },
@@ -150,17 +178,49 @@ const ChatAssistant = () => {
     </div>
   );
 
+  const ChatButton = ({ onClick, isOpen }) => (
+    <motion.button
+      onClick={onClick}
+      className="fixed bottom-4 right-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-full shadow-lg z-50 flex items-center justify-center"
+      animate={{
+        scale: [1, 0.95, 1],
+      }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: [0.4, 0, 0.6, 1],
+        times: [0, 0.5, 1]
+      }}
+      whileHover={{ 
+        scale: 1.05,
+        transition: { duration: 0.3, ease: "easeOut" }
+      }}
+      whileTap={{ 
+        scale: 0.95,
+        transition: { duration: 0.2, ease: "easeOut" }
+      }}
+    >
+      <motion.div
+        className="relative flex items-center justify-center"
+        animate={{
+          scale: [1, 0.95, 1],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: [0.4, 0, 0.6, 1],
+          times: [0, 0.5, 1]
+        }}
+      >
+        {isOpen ? <IoMdClose size={24} /> : <FaRobot size={24} />}
+      </motion.div>
+    </motion.button>
+  );
+
   return (
     <>
       {/* Chat Toggle Button */}
-      <motion.button
-        onClick={toggleChat}
-        className="fixed bottom-4 right-4 w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-xl flex items-center justify-center z-50 hover:scale-110 transition-transform backdrop-blur-lg"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        <FaRobot size={24} />
-      </motion.button>
+      <ChatButton onClick={toggleChat} isOpen={isOpen} />
 
       {/* Chat Window */}
       <AnimatePresence>
