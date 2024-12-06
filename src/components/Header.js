@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiGlobe, FiInstagram, FiTwitter } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiGlobe, FiInstagram, FiTwitter, FiSend } from 'react-icons/fi';
 import { IoMdSend } from 'react-icons/io';
 import { FaRobot } from 'react-icons/fa';
 import Groq from 'groq-sdk';
@@ -11,14 +11,53 @@ const groq = new Groq({
 });
 
 const systemPrompt = `You are Virtual Rahulraj, an AI assistant for Rahulraj P V's portfolio website.
-Keep responses very short and concise, focusing on key points.
-Current context about Rahulraj:
-- AI R&D Engineer at Kerala Blockchain Academy
-- MTech student at Digital University Kerala
-- Co-founder of KnowLumi
-- Research in Generative AI & Film Analytics
-- Creator of Silent Spring musical project
-- Expertise in AI, Blockchain, and Creative Technology`;
+IMPORTANT: Keep all responses extremely short and concise (1-2 sentences max).
+
+Education:
+- MTech in Computer Science & Engineering (AI) at Digital University Kerala (2022-2024)
+- Post Graduate Diploma in Data Science & Analytics from Kannur University (2021-2022)
+- Master of Science in Physics from Kannur University (2019-2021)
+
+Work Experience:
+- AI R&D Engineer at Kerala Blockchain Academy (Dec 2024-Present)
+- Co-Founder at KnowLumi (July 2024-Present)
+- Research Intern at IIM Kozhikode (July-Dec 2023)
+- Data Scientist Intern at First Principle Labs (Feb-June 2022)
+- AI R&D Intern at PixDynamics (Feb-May 2022)
+- Research Intern at CSIR National Physical Laboratory (Apr-June 2021)
+
+Research Papers:
+1. "Monetize the dual: A data analytic approach for native language & prequel movies popularity analysis" (ICDAI'23)
+2. "Changes in Atmospheric Air Quality in the Wake of a Lockdown Related to Covid-19" (IJAES'22)
+
+Notable Projects:
+1. India's First AI Campus Radio
+2. Predictive Algorithm for Movie Success
+3. Real-Time Film Analysis with Computer Vision & Neuroscience
+4. LLM Based Gamified Decision Tree-Based Story Writing Tool
+
+Awards:
+- Outstanding Student Award, Digital University Kerala
+- Smart India Hackathon 2023 - University Level (First)
+- Cisco ThingQbator National Hackathon (Second)
+- Sharktank Hackathon - Google DSC (First)
+- Directed 'Silent Spring' musical album (Amazon Prime)
+
+Skills:
+- Programming: Python, R
+- Technologies: ML, CV, Deep Learning, LLMs, GenAI, NLP, Data Science
+- Tools: TensorFlow, PyTorch, LangChain, PEFT, LoRA, GitHub
+- Creative: Screenplay Writing, Film Direction, Photography
+
+Leadership:
+- Google Developer Student Club WoW Kerala State 2023 Media Team Lead
+- Institution Innovation Club Student Lead at DUK
+- COO of Innovation Club & Student Placement Cell coordinator at DUK
+
+Contact:
+Email: rahulraj.cs22@duk.ac.in
+Phone: +91 9061360912
+Website: sites.google.com/duk.ac.in/rahulrajpv/bio`;
 
 const Header = () => {
   const [message, setMessage] = useState('');
@@ -145,7 +184,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="w-[600px] mx-auto relative min-h-[400px] flex flex-col items-center">
+        <div className="w-[800px] mx-auto relative min-h-[400px] flex flex-col items-center">
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-2 text-white/90 mb-2">
               <FaRobot className="text-xl" />
@@ -166,16 +205,16 @@ const Header = () => {
             </div>
             <button
               type="submit"
-              className="absolute right-0 h-full px-6 text-white rounded-r-xl flex items-center justify-center transition-all bg-[#4477ff] hover:bg-[#3366ff] disabled:opacity-50 disabled:cursor-not-allowed"
+              className="absolute right-0 h-full px-8 text-white rounded-r-xl flex items-center justify-center transition-all bg-[#4477ff] hover:bg-[#3366ff] disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={!message.trim() || isLoading}
             >
-              <IoMdSend className="text-xl" />
+              <FiSend className="text-xl" />
             </button>
           </form>
 
           <div className="absolute w-full top-32">
             <AnimatePresence>
-              {(isLoading || displayedLines.length > 0 || error) && (
+              {(error || displayedLines.length > 0) && (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -183,38 +222,37 @@ const Header = () => {
                   className="rounded-2xl"
                 >
                   <div className="text-white">
-                    {isLoading ? (
-                      <div className="flex items-center gap-2 justify-center">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                        <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                        <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
-                      </div>
-                    ) : error ? (
+                    {error ? (
                       <div className="text-red-400 text-center">{error}</div>
                     ) : (
                       <motion.div 
-                        className="space-y-8 text-center max-w-2xl mx-auto px-4"
+                        className="space-y-1 text-center max-w-2xl mx-auto"
                       >
                         {displayedLines.map((line, index) => (
                           <motion.div 
                             key={index}
-                            className="bg-[#1e2536]/30 backdrop-blur-sm rounded-xl p-6 shadow-lg"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.2 }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.2, delay: index * 0.05 }}
                           >
-                            <p className="text-lg leading-relaxed">
+                            <p className="text-lg text-white/90">
                               {line.split(' ').map((word, wordIndex) => (
                                 <motion.span
                                   key={wordIndex}
-                                  initial={{ filter: 'blur(8px)', opacity: 0 }}
-                                  animate={{ filter: 'blur(0px)', opacity: 1 }}
+                                  initial={{ filter: 'blur(12px)', opacity: 0, y: 10 }}
+                                  animate={{ filter: 'blur(0px)', opacity: 1, y: 0 }}
                                   transition={{ 
-                                    duration: 0.8,
-                                    delay: wordIndex * 0.1 + index * 0.2,
-                                    ease: "easeOut"
+                                    duration: 0.5,
+                                    delay: wordIndex * 0.05,
+                                    ease: [0.4, 0.0, 0.2, 1],
+                                    opacity: { duration: 0.5 },
+                                    filter: { duration: 0.8 },
+                                    y: { duration: 0.4 }
                                   }}
-                                  className="inline-block mx-1 text-white/90"
+                                  className="inline-block mx-1 bg-clip-text"
+                                  style={{
+                                    textShadow: '0 0 10px rgba(255,255,255,0.1)'
+                                  }}
                                 >
                                   {word}
                                 </motion.span>

@@ -49,6 +49,19 @@ const Achievements = () => {
         "Featured in regional news media",
         "Innovative remote production techniques"
       ]
+    },
+    {
+      icon: <FaAward className="text-4xl text-blue-400" />,
+      title: "AI Campus Radio",
+      organization: "Developer",
+      description: "Developed an innovative AI-powered campus radio system that revolutionizes campus communications. The system features automated content generation, personalized announcements, and real-time text-to-speech capabilities, enhancing the campus information delivery experience.",
+      date: "",
+      gradient: "from-blue-500 via-cyan-500 to-teal-500",
+      achievements: [
+        "AI/ML",
+        "Text-to-Speech",
+        "Automation"
+      ]
     }
   ];
 
