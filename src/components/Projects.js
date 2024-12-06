@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FiGithub, FiExternalLink, FiRadio, FiFilm, FiBook, FiCpu, FiArrowRight, FiPlay, FiDownload, FiUser, FiShare2, FiSun, FiMoon } from 'react-icons/fi';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [darkMode, setDarkMode] = useState(true);
-  const { } = useScroll();
 
   const projects = [
     {
@@ -220,6 +220,10 @@ const Projects = () => {
     setDarkMode(!darkMode);
   };
 
+  const handleProjectClick = (project) => {
+    setSelectedProject(project);
+  };
+
   return (
     <section className={`py-20 px-4 relative overflow-hidden ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
       {/* Background Elements */}
@@ -269,7 +273,7 @@ const Projects = () => {
               whileHover={{ scale: 1.02 }}
               className={`group cursor-pointer relative overflow-hidden rounded-xl backdrop-blur-lg
                 ${index === activeIndex ? 'ring-2 ring-offset-2 ring-offset-gray-900 ring-blue-500/50' : ''}`}
-              onClick={() => setSelectedProject(project)}
+              onClick={() => handleProjectClick(project)}
             >
               {/* Background Gradient */}
               <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-10 group-hover:opacity-20 transition-opacity duration-500`} />
@@ -363,18 +367,17 @@ const Projects = () => {
                     </a>
                   )}
                   <motion.button
-                    whileHover={{ x: 5 }}
-                    className="ml-auto text-blue-400 hover:text-blue-300 flex items-center gap-2"
-                    onClick={() => setSelectedProject(project)}
+                    onClick={() => handleProjectClick(project)}
+                    className="flex items-center space-x-2 text-blue-400 hover:text-blue-500"
                   >
                     Learn More <FiArrowRight />
                   </motion.button>
-                  <a 
-                    href="#project" 
+                  <button 
+                    onClick={() => window.open(project.link, '_blank')}
                     className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                   >
                     View Project
-                  </a>
+                  </button>
                 </div>
               </div>
             </motion.div>
