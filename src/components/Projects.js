@@ -550,6 +550,15 @@ const Projects = () => {
                     <span>Download Resources</span>
                   </button>
                   <button
+                    onClick={() => {
+                      if (navigator.share) {
+                        navigator.share({
+                          title: selectedProject.title,
+                          text: selectedProject.description,
+                          url: window.location.href
+                        });
+                      }
+                    }}
                     className="flex items-center space-x-2 px-4 py-2 bg-gray-700/50 hover:bg-gray-700/70 
                       rounded-lg transition-colors duration-300"
                   >
