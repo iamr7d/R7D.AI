@@ -356,15 +356,14 @@ const Projects = () => {
                     </a>
                   )}
                   {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors duration-300"
-                      onClick={e => e.stopPropagation()}
+                    <button
+                      onClick={() => window.open(project.live, '_blank')}
+                      className="flex items-center space-x-2 px-4 py-2 bg-blue-600/50 hover:bg-blue-600/70 
+                        rounded-lg transition-colors duration-300"
                     >
-                      <FiExternalLink className="w-5 h-5" />
-                    </a>
+                      <FiPlay className="w-5 h-5" />
+                      <span>Live Demo</span>
+                    </button>
                   )}
                   <motion.button
                     onClick={() => handleProjectClick(project)}
@@ -518,28 +517,24 @@ const Projects = () => {
 
                 <div className="flex flex-wrap gap-4">
                   {selectedProject.github && (
-                    <a
-                      href={selectedProject.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => window.open(selectedProject.github, '_blank')}
                       className="flex items-center space-x-2 px-4 py-2 bg-gray-700/50 hover:bg-gray-700/70 
                         rounded-lg transition-colors duration-300"
                     >
                       <FiGithub className="w-5 h-5" />
                       <span>View Source</span>
-                    </a>
+                    </button>
                   )}
                   {selectedProject.live && (
-                    <a
-                      href={selectedProject.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => window.open(selectedProject.live, '_blank')}
                       className="flex items-center space-x-2 px-4 py-2 bg-blue-600/50 hover:bg-blue-600/70 
                         rounded-lg transition-colors duration-300"
                     >
                       <FiPlay className="w-5 h-5" />
                       <span>Live Demo</span>
-                    </a>
+                    </button>
                   )}
                   <button
                     onClick={() => window.open(selectedProject.resourceUrl, '_blank')}
