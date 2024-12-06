@@ -541,14 +541,14 @@ const Projects = () => {
                       <span>Live Demo</span>
                     </a>
                   )}
-                  <a
-                    href="#"
+                  <button
+                    onClick={() => window.open(selectedProject.resourceUrl, '_blank')}
                     className="flex items-center space-x-2 px-4 py-2 bg-green-600/50 hover:bg-green-600/70 
                       rounded-lg transition-colors duration-300"
                   >
                     <FiDownload className="w-5 h-5" />
                     <span>Download Resources</span>
-                  </a>
+                  </button>
                   <button
                     className="flex items-center space-x-2 px-4 py-2 bg-gray-700/50 hover:bg-gray-700/70 
                       rounded-lg transition-colors duration-300"
