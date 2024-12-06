@@ -8,21 +8,34 @@ const CreativeWorks = () => {
       title: "Silent Spring",
       icon: <FaFilm className="text-purple-500 text-4xl" />,
       description: "A Malayalam music video exploring the nuanced love story of an introverted girl. This project delves into the silent yet profound world of introverted emotions, brought to life through layered narrative and aesthetic visuals.",
-      achievement: "Selected for Student World Impact Film Festival, New York",
+      achievements: [
+        "Quarter-Finalist at WideScreen Film & Music Video Festival",
+        "Selected for Amazon Prime UK Publishing",
+        "Selected for Multiple Lift-Off Filmmaker Sessions (Sept-Oct 2022)",
+        "Selected for Student World Impact Film Festival, New York",
+        "Best Screenplay - Kannur University Kalolsavam 2020 (Third Place)",
+        "Best Screenplay - Kannur University Media Fest Ad Astra (2021, 2022)",
+        "Best Ad Film - Kannur University Media Fest Ad Astra",
+        "Best Camp Member - Kerala State Level Film Camp"
+      ],
       link: "nzZc5e7ADHU"
     },
     {
       title: "How Colors are Made",
       icon: <FaPalette className="text-red-500 text-4xl" />,
       description: "A PSA and mobile short film inspired by Rachel Houston's quote about embracing life's diversity. The film advocates for celebrating unique gender identities, aligning with WHO's perspective on gender as a social construct.",
-      achievement: "Selected for Student World Impact Film Festival, New York",
+      achievements: [
+        "Selected for Multiple Lift-Off Filmmaker Sessions (Aug-Nov 2022)",
+        "Selected for First-Time Filmmaker Sessions",
+        "Selected for Student World Impact Film Festival, New York"
+      ],
       link: "pHpgFu6dbaI"
     },
     {
       title: "SKYLAB - Sleepless nights",
       icon: <FaSpaceShuttle className="text-cyan-500 text-4xl" />,
       description: "A documentary exploring NASA's pioneering space station launched in 1973. The film chronicles Skylab's missions, operations, and its eventual fate in 1979 as it disintegrated in Earth's atmosphere.",
-      achievement: "Director's Cut",
+      achievements: ["Director's Cut"],
       link: "q_uo5tu4X4M"
     }
   ];
@@ -68,9 +81,13 @@ const CreativeWorks = () => {
                   <h3 className="text-2xl font-semibold text-white">{work.title}</h3>
                 </div>
                 <p className="text-gray-400 mb-4">{work.description}</p>
-                <div className="flex items-center gap-2 text-yellow-500">
-                  <FaAward />
-                  <span className="text-sm">{work.achievement}</span>
+                <div className="space-y-2">
+                  {work.achievements.map((achievement, i) => (
+                    <div key={i} className="flex items-center gap-2 text-yellow-500">
+                      <FaAward />
+                      <span className="text-sm">{achievement}</span>
+                    </div>
+                  ))}
                 </div>
                 {work.link && (
                   <div className="mt-6 relative pt-[56.25%] bg-black rounded-lg overflow-hidden">
