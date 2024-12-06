@@ -6,6 +6,7 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
+        "buildCommand": "bash ./vercel-build.sh",
         "distDir": "build"
       }
     }
