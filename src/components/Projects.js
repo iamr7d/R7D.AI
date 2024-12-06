@@ -25,7 +25,7 @@ const Projects = () => {
       github: "https://github.com/iamr7d/ai-campus-radio",
       live: "https://ai-radio.duk.ac.in",
       video: "https://www.youtube.com/embed/sample-video",
-      collaborators: ["John Doe", "Jane Smith"],
+      collaborators: ["Dr. Asharaf S", "Dean, Digital University Kerala"],
       testimonials: [
         "This platform has transformed our campus radio experience!",
         "The AI-generated content is both engaging and diverse."
@@ -54,7 +54,7 @@ const Projects = () => {
       tags: ["Machine Learning", "Data Science", "Film Industry"],
       github: "https://github.com/iamr7d/movie-success-predictor",
       video: "https://www.youtube.com/embed/sample-video",
-      collaborators: ["Alice Brown", "Bob Johnson"],
+      collaborators: ["Dr. Asharaf S", "Dean, Digital University Kerala", "Dr. Sanil S", "Digital University Kerala"],
       testimonials: [
         "A game-changer for film producers!",
         "Accurate predictions that help in strategic planning."
@@ -114,7 +114,7 @@ const Projects = () => {
       github: "https://github.com/iamr7d/llm-story-writer",
       live: "https://story-writer.demo.com",
       video: "https://www.youtube.com/embed/sample-video",
-      collaborators: ["Eve White", "Frank Green"],
+      collaborators: ["Dr. Asharaf S", "Dean, Digital University Kerala", "Prof. Mohammad Shahid Abdulla", "IIM Kozhikode"],
       testimonials: [
         "A must-have tool for writers and storytellers.",
         "The AI-generated stories are both creative and engaging."
