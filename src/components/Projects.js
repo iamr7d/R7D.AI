@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useAnimation, useScroll } from 'framer-motion';
-import { FiGithub, FiExternalLink, FiRadio, FiFilm, FiBook, FiCpu, FiArrowRight, FiPlay, FiDownload, FiUser, FiShare2, FiSun, FiMoon } from 'react-icons/fi';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [darkMode, setDarkMode] = useState(true);
-  const { scrollYProgress } = useScroll();
+  const { } = useScroll();
 
   const projects = [
     {
@@ -371,7 +370,7 @@ const Projects = () => {
                     Learn More <FiArrowRight />
                   </motion.button>
                   <a 
-                    href="#contact" 
+                    href="#project" 
                     className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                   >
                     View Project
