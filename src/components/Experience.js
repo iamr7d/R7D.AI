@@ -89,7 +89,12 @@ const Experience = () => {
                   {exp.icon}
                   <div>
                     <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
-                    <a href="#" className="text-blue-400">{exp.company}</a>
+                    <a 
+                      href="#contact" 
+                      className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                    >
+                      {exp.company}
+                    </a>
                     <p className="text-gray-400">{exp.location} | {exp.date}</p>
                   </div>
                 </div>

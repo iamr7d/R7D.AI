@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiBookOpen, FiCpu, FiUsers, FiAward, FiMonitor } from 'react-icons/fi';
+import { FiBookOpen, FiCpu, FiUsers, FiMonitor } from 'react-icons/fi';
 
 const Research = () => {
   const [selectedPublication, setSelectedPublication] = useState(null);
