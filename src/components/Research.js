@@ -7,36 +7,6 @@ const Research = () => {
 
   const publications = [
     {
-      title: "Exploring the Intersection of AI and Cognitive Science in Educational Technology",
-      authors: "Research at IIM Kozhikode",
-      year: "2023-2024",
-      type: "Research Internship",
-      description: "Leading research on integrating Large Language Models (LLMs) in educational contexts, focusing on personalized learning experiences and cognitive development assessment.",
-      highlights: [
-        "Developed novel methodologies for implementing LLMs in education",
-        "Conducted experiments with 500+ students",
-        "Created adaptive learning algorithms",
-        "Analyzed impact on student engagement and performance"
-      ],
-      technologies: ["LangChain", "PEFT", "LoRA", "Transformers"],
-      collaborators: ["IIM Kozhikode", "Digital University Kerala"]
-    },
-    {
-      title: "Brain-Computer Interface Development",
-      authors: "Research Project at Digital University Kerala",
-      year: "2023",
-      type: "Academic Research",
-      description: "Developed advanced BCI systems integrating EEG signal processing with machine learning for enhanced human-computer interaction.",
-      highlights: [
-        "Implemented real-time EEG signal processing",
-        "Developed machine learning models for signal classification",
-        "Created interactive visualization tools",
-        "Achieved significant improvement in signal accuracy"
-      ],
-      technologies: ["Python", "TensorFlow", "EEG Processing", "Signal Analysis"],
-      collaborators: ["Digital University Kerala"]
-    },
-    {
       title: "Monetize the Dual: A Data Analytic Approach for Native Language and Prequel Movies Popularity Analysis",
       authors: "Rahulraj P. V., Sanil J., Anoop V. S, Asharaf S",
       year: "2023",
